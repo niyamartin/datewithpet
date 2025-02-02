@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Dating Site</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Rubik', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        /* Navbar */
+        .navbar {
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .navbar .branding {
+            font-size: 28px;
+            font-weight: 700;
+            color: #FF5733;
+            margin-left: 0;
+            flex: 1;
+        }
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 25px;
+        }
+        .navbar ul li {
+            display: inline;
+        }
+        .navbar ul li a {
+            color: #2C3E50;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 20px;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+        .navbar ul li a:hover {
+            background-color: #ecf0f1;
+            border-radius: 5px;
+        }
+        /* Blue connecting line */
+        .blue-line {
+            width: 100%;
+            height: 4px;
+            background-color: #F1F8FF;
+        }
+        /* Main content with background image */
+        .main-content {
+            text-align: center;
+            padding: 100px 20px;
+            background-image: url('https://media.istockphoto.com/id/1168451046/photo/cat-and-dog-sleeping-puppy-and-kitten-sleep.jpg?s=612x612&w=0&k=20&c=WufdaqZhhwOT6sJFAb6g7-laVoBWaf66XefiWUt44BQ='); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            color: white; /* Ensures text is readable on image */
+            position: relative;
+            min-height: 100vh; /* Ensures the image covers the full height of the viewport */
+        }
+        .main-content h1 {
+            font-size: 60px;
+            font-weight: 700;
+            color: white; /* White text */
+            z-index: 2; /* Ensures text is on top of the image */
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6); /* Added white text shadow for better readability */
+        }
+        .main-content p {
+            font-size: 20px;
+            font-weight: 400;
+            color: white; /* White text */
+            z-index: 2; /* Ensures text is on top of the image */
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6); /* Added white text shadow for better readability */
+        }
+        .main-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4); /* Darker overlay to make text more readable */
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="branding">Paws & Hearts</div> <!-- Branding text moved to the extreme left -->
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#stories">Stories</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+        </ul>
+    </div>
+
+    <!-- Blue connecting line -->
+    <div class="blue-line"></div>
+
+    <!-- Main content with background image -->
+    <div class="main-content">
+        <h1>Welcome to Paws & Hearts!</h1>
+        <p>Where every paw finds a perfect match</p>
+    </div>
+</body>
+</html>

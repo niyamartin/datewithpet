@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preferred Gender</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #F1F8FF; /* Light blue background to match previous page */
+            margin: 0;
+            padding: 0;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Nunito', sans-serif;
+            font-size: 2rem;
+            color: #FF5733; /* Consistent color for heading */
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        /* Checkbox container styling */
+        .checkbox-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .checkbox-container input[type="checkbox"] {
+            margin-right: 10px;
+            transform: scale(1.3);
+        }
+
+        label {
+            font-size: 1.2rem;
+            color: #FF5733;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        label:hover {
+            color: #FF1C1C;
+        }
+
+        .checkbox-container input[type="checkbox"]:checked + label {
+            color: #FF1C1C;
+        }
+
+        /* Button Styling */
+        .button-container {
+            margin-top: 40px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            color: #fff;
+            background-color: #FF5733;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #FF1C1C;
+            transform: scale(1.05);
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            label {
+                font-size: 1rem;
+            }
+
+            button {
+                width: 100%;
+                font-size: 1rem;
+            }
+
+            .checkbox-container {
+                padding: 0 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Preferred Gender for Match</h1>
+    <div class="checkbox-container">
+        <div>
+            <input type="checkbox" id="male" value="Male">
+            <label for="male">Male</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="female" value="Female">
+            <label for="female">Female</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="any" value="Any">
+            <label for="any">Any</label>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <a href="uploadpetphoto.html">Submit</a>
+    </div>
+
+    <script>
+        function submitSelection() {
+            const selectedGender = [];
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+            
+            checkboxes.forEach(function(checkbox) {
+                selectedGender.push(checkbox.value);
+            });
+
+            if (selectedGender.length > 0) {
+                alert('You selected: ' + selectedGender.join(', '));
+                // You can redirect to another page or perform other actions
+                // Example: window.location.href = "/nextPage";
+            } else {
+                alert('Please select at least one gender preference!');
+            }
+        }
+    </script>
+</body>
+</html>

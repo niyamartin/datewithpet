@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Pet Age</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #F1F8FF;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-family: 'Nunito', sans-serif;
+            font-size: 2rem;
+            color: #FF5733;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        /* Checkbox and label styling */
+        .checkbox-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .checkbox-container input[type="checkbox"] {
+            margin-right: 10px;
+            transform: scale(1.3);
+        }
+
+        label {
+            font-size: 1.2rem;
+            color: #FF5733;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        label:hover {
+            color: #FF1C1C;
+        }
+
+        .checkbox-container input[type="checkbox"]:checked + label {
+            color: #FF1C1C;
+        }
+
+        /* Button Styling */
+        .button-container {
+            margin-top: 40px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            color: #fff;
+            background-color: #FF5733;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #FF1C1C;
+            transform: scale(1.05);
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            button {
+                width: 100%;
+                font-size: 1rem;
+            }
+
+            .checkbox-container {
+                padding: 0 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <h1>What's Your Pet's Age?</h1>
+    <p>Select your pet's age group to continue:</p>
+    <div class="checkbox-container">
+        <div>
+            <input type="checkbox" id="puppyKitten" value="Puppy/Kitten (0-1 year)">
+            <label for="puppyKitten">Puppy/Kitten (0-1 year)</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="young" value="Young (1-3 years)">
+            <label for="young">Young (1-3 years)</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="adult" value="Adult (3-7 years)">
+            <label for="adult">Adult (3-7 years)</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="senior" value="Senior (7+ years)">
+            <label for="senior">Senior (7+ years)</label>
+        </div>
+    </div>
+
+    <div class="button-container"> 
+        <a href="health.html">Submit</a>
+    </div>
+
+    <script>
+        function submitSelection() {
+            const selectedAges = [];
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+            
+            checkboxes.forEach(function(checkbox) {
+                selectedAges.push(checkbox.value);
+            });
+
+            if (selectedAges.length > 0) {
+                alert('You selected: ' + selectedAges.join(', '));
+                // You can redirect or load additional content here
+                // Example: window.location.href = "/nextPage";
+            } else {
+                alert('Please select at least one age category!');
+            }
+        }
+    </script>
+</body>
+</html>

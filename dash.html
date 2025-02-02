@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swipe Dating App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            overflow-y: auto;
+        }
+        .navbar {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: white;  /* Changed to white for the navbar */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar .brand {
+            font-size: 24px;
+            color: #FF5733;  /* Orange color for branding text */
+            font-weight: bold;
+        }
+        .navbar .right-section {
+            display: flex;
+            align-items: center;
+        }
+        .search-box {
+            padding: 5px 10px;
+            border: 1px solid #FF5733;  /* Orange border for the search bar */
+            border-radius: 5px;
+            margin-left: 10px;
+            background-color: #fff;
+            color: #333;
+        }
+        .navbar span {
+            font-size: 28px;  /* Slightly larger profile icon */
+            cursor: pointer;
+            color: #FF5733;  /* Orange color for the profile icon */
+        }
+        .container {
+            display: flex;
+            margin-top: 80px;  /* Adjusted to avoid overlap with navbar */
+            width: 100%;
+            max-width: 1200px;
+        }
+        .profile-list {
+            width: 300px;  /* Adjusted width for more space */
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            margin-right: 20px;
+            overflow-y: auto;
+            max-height: 600px;  /* Increased height for profile list visibility */
+        }
+        .profile-item {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            font-size: 18px;
+        }
+        .swiper {
+            width: 60%;  /* Adjusted width of swiper deck */
+            height: 600px;  /* Increased height for a larger deck */
+            overflow-y: auto;
+        }
+        .swiper-slide {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            font-size: 24px;
+            font-weight: bold;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <span class="brand">Paws & Hearts</span>
+        <div class="right-section">
+            <span>👤</span> <!-- Profile icon -->
+            <input type="text" class="search-box" placeholder="Search">
+        </div>
+    </div>
+    <div class="container">
+        <div class="profile-list">
+            <div class="profile-item">Profile 1</div>
+            <div class="profile-item">Profile 2</div>
+            <div class="profile-item">Profile 3</div>
+            <div class="profile-item">Profile 4</div>
+            <div class="profile-item">Profile 5</div>
+            <div class="profile-item">Profile 6</div>
+            <div class="profile-item">Profile 7</div>
+            <!-- More profiles -->
+        </div>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    Person 1
+                </div>
+                <div class="swiper-slide">
+                    Person 2
+                </div>
+                <div class="swiper-slide">
+                    Person 3
+                </div>
+                <div class="swiper-slide">
+                    Person 4
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            effect: 'cards',
+            grabCursor: true,
+            on: {
+                slideChangeTransitionEnd: function () {
+                    let currentIndex = this.activeIndex;
+                    if (currentIndex !== 0) {
+                        let direction = this.touches.diff > 0 ? 'Dislike' : 'Like';
+                        console.log(direction + ' - ' + currentIndex);
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Complete</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f8ff;  /* The same light blue background as previous pages */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding-top: 80px;  /* Ensure space for the navbar */
+        }
+        h1 {
+            font-size: 28px;
+            color: #FF5733;  /* Matching brand color - orange */
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            color: #333;  /* Dark text for better readability */
+            text-align: center;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+        a {
+            padding: 10px 20px;
+            background-color: #FF5733;  /* Matching brand color */
+            color: #F1F8FF;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+        a:hover {
+            background-color: #e04f2f;  /* Slightly darker shade for hover effect */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Sign-Up Complete</h1>
+    <p>Thank you for signing up! Your pet's profile is now ready.</p>
+    <a href="dash.html">Go to Profile</a>
+
+</body>
+</html>

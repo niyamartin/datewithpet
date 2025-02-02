@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Pet Information</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #F1F8FF; /* Light blue background */
+            margin: 0;
+            padding: 0;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        h2 {
+            font-family: 'Nunito', sans-serif;
+            font-size: 2rem;
+            color: #FF5733;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        /* Pet form container styling */
+        .pet-form-container {
+            width: 90%;
+            max-width: 450px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        label {
+            font-size: 1.2rem;
+            color: #FF5733;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            color: #fff;
+            background-color: #FF5733;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #FF1C1C;
+            transform: scale(1.05);
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            label {
+                font-size: 1rem;
+            }
+
+            button {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="pet-form-container">
+        <h2>Enter Pet Information</h2>
+        <form id="pet-form">
+            <label for="pet-name">Pet's Name:</label>
+            <input type="text" id="pet-name" name="pet-name" required placeholder="Enter pet's name">
+
+            <label for="pet-breed">Breed:</label>
+            <input type="text" id="pet-breed" name="pet-breed" required placeholder="Enter breed">
+
+            <label for="pet-weight">Weight (in kg):</label>
+            <input type="number" id="pet-weight" name="pet-weight" required placeholder="Enter weight">
+
+            <label for="pet-gender">Gender:</label>
+            <select id="pet-gender" name="pet-gender" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <a href="age.html">Submit</a>
+        </form>
+    </div>
+</body>
+</html>

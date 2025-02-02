@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Pet Photos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f0f0;  /* Light gray background for the page */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding-top: 80px;  /* Ensure space for the navbar */
+        }
+        h1 {
+            font-size: 28px;
+            color: #FF5733;  /* Brand color - orange */
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+        label {
+            font-size: 18px;
+            color: #333;  /* Dark text for better readability */
+            margin-bottom: 10px;
+        }
+        input[type="file"] {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        a {
+            padding: 10px 20px;
+            background-color: #FF5733;  /* Matching brand color */
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+        a:hover {
+            background-color: #e04f2f;  /* Slightly darker shade for hover effect */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Upload Photos of Your Pet</h1>
+
+    <form action="#" method="post" enctype="multipart/form-data">
+        <label>Choose Photos:
+            <input type="file" name="photos" accept="image/*" multiple>
+        </label>
+        <a href="signupcomplte.html">Upload</a>
+    </form>
+
+</body>
+</html>
